@@ -71,7 +71,7 @@ export function Header() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 onClick={() => scrollToSection(item.id)}
-                                className="relative text-foreground hover:text-primary transition-colors duration-200 group"
+                                className="relative text-foreground hover:text-primary transition-colors duration-200 group cursor-pointer"
                             >
                                 {item.label}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-energy-gradient group-hover:w-full transition-all duration-300" />
