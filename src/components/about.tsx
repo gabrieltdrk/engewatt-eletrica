@@ -48,10 +48,10 @@ export function About() {
                     {stats.map((stat, index) => (
                         <Card key={index} className="text-center p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-soft transition-all duration-300">
                             <CardContent className="p-0">
-                                <div className="text-3xl md:text-4xl font-bold bg-energy-gradient bg-clip-text text-transparent mb-2">
+                                <div className="text-3xl md:text-4xl font-bold bg-energy-gradient bg-clip-text text-transparent mb-2 select-none">
                                     {stat.number}
                                 </div>
-                                <div className="text-muted-foreground text-sm md:text-base">{stat.label}</div>
+                                <div className="text-muted-foreground text-sm md:text-base disabled select-none">{stat.label}</div>
                             </CardContent>
                         </Card>
                     ))}

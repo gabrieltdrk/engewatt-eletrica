@@ -122,7 +122,7 @@ export function Services() {
                     variant="outline"
                     className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground group cursor-pointer"
                   >
-                    Solicitar Orçamento
+                    Solicitar orçamento
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>

@@ -55,7 +55,7 @@ export function Hero() {
               size="lg"
               className="bg-energy-gradient hover:opacity-90 text-white shadow-electric text-lg px-8 py-4 h-auto cursor-pointer"
             >
-              Solicitar Orçamento
+              Solicitar orçamento
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
@@ -64,7 +64,7 @@ export function Hero() {
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-4 h-auto cursor-pointer"
             >
-              Conhecer Serviços
+              Conhecer serviços
             </Button>
           </motion.div>
 

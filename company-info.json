@@ -1,0 +1,16 @@
+{
+    "name": "Engewatt",
+    "description": "Estamos prontos para atender suas necessidades em engenharia elétrica.",
+    "tel": "(13) 99638-5150",
+    "location": "Santos-SP",
+    "email": "contato@engewatt.com.br",
+    "open": {
+        "from": "08:00",
+        "to": "17:00"
+    },
+    "services": {
+        "service1": "",
+        "service1": "",
+        "service3": ""
+    }
+}

@@ -92,7 +92,7 @@ export function Contact() {
               <CardHeader className="p-0 mb-6">
                 <div className="flex items-center mb-4">
                   <Zap className="w-8 h-8 mr-3" />
-                  <CardTitle className="text-2xl">Fale Conosco</CardTitle>
+                  <CardTitle className="text-2xl">Fale conosco</CardTitle>
                 </div>
                 <p className="text-white/90">
                   Estamos prontos para atender suas necessidades em engenharia elétrica.
@@ -152,7 +152,7 @@ export function Contact() {
           >
             <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50">
               <CardHeader className="p-0 mb-6">
-                <CardTitle className="text-2xl mb-2">Solicite seu Orçamento</CardTitle>
+                <CardTitle className="text-2xl mb-2">Solicite seu orçamento</CardTitle>
                 <p className="text-muted-foreground">
                   Preencha o formulário abaixo e nossa equipe entrará em contato
                 </p>

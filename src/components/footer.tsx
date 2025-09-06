@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Github } from "lucide-react";
+import company from "../../company-info.json";
 import logo from "@/assets/logo.png";
 
 export function Footer() {
@@ -98,15 +99,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span className="text-background/80">(13) XXXXX-XXXX</span>
+                <span className="text-background/80">{company.tel}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span className="text-background/80">contato@engewatt.com.br</span>
+                <span className="text-background/80">{company.email}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span className="text-background/80">Santos-SP</span>
+                <span className="text-background/80">{company.location}</span>
               </div>
             </div>
           </motion.div>
