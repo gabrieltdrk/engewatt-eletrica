@@ -16,27 +16,26 @@ export function Header() {
         return () => document.removeEventListener("scroll", handleScroll);
     }, []);
 
-useEffect(() => {
-    const headerElement = document.getElementById("header");
+    useEffect(() => {
+        const headerElement = document.getElementById("header");
 
-    if (headerElement) { // checa se existe
-        if (isMobileMenuOpen) {
-            document.body.style.overflow = "hidden";
-            headerElement.className = "bg-transparent";
-        } else {
-            document.body.style.overflow = "";
-            headerElement.className = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-                isScrolled
-                    ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border"
-                    : "bg-transparent"
-            }`;
+        if (headerElement) {
+            if (isMobileMenuOpen) {
+                document.body.style.overflow = "hidden";
+                headerElement.className = "bg-transparent";
+            } else {
+                document.body.style.overflow = "";
+                headerElement.className = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+                        ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border"
+                        : "bg-transparent"
+                    }`;
+            }
         }
-    }
 
-    return () => {
-        document.body.style.overflow = "";
-    };
-}, [isMobileMenuOpen, isScrolled]);
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [isMobileMenuOpen, isScrolled]);
 
 
 
@@ -46,6 +45,9 @@ useEffect(() => {
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
             setIsMobileMenuOpen(false);
+            if (sectionId == "hero") {
+                window.scrollTo({top: 0, behavior: "smooth"})
+            }
         }
     };
 
