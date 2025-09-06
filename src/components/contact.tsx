@@ -88,7 +88,7 @@ export function Contact() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-1"
           >
-            <Card className="p-6 bg-power-gradient text-white shadow-electric h-fit">
+            <Card className="p-6 bg-energy-gradient text-white shadow-electric h-fit">
               <CardHeader className="p-0 mb-6">
                 <div className="flex items-center mb-4">
                   <Zap className="w-8 h-8 mr-3" />
@@ -112,9 +112,8 @@ export function Contact() {
                     <div className="p-2 bg-white/20 rounded-lg">
                       <info.icon className="w-5 h-5" />
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">{info.title}</h4>
-                      <p className="text-white/90 font-medium">{info.content}</p>
+                    <div className="flex w-full flex-col gap-3">
+                      <h4 className="font-semibold mb-1">{info.title}: {info.content}</h4>
                       <p className="text-white/70 text-sm">{info.description}</p>
                     </div>
                   </motion.div>
@@ -122,7 +121,6 @@ export function Contact() {
               </CardContent>
             </Card>
 
-            {/* WhatsApp CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -131,8 +129,12 @@ export function Contact() {
               className="mt-6"
             >
               <Button
-                className="w-full bg-green-500 hover:bg-green-600 text-white shadow-lg"
+                className="w-full bg-green-500 hover:bg-green-600 text-white shadow-lg cursor-pointer"
                 size="lg"
+                onClick={() => {
+                  const whatsappLink = "https://api.whatsapp.com/send?phone=5513996385150&text=Ol%C3%A1!%0A%0AEu%20gostaria%20de%20realizar%20um%20or%C3%A7amento."
+                  window.open(whatsappLink, "_blank")
+                }}
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp: Atendimento Rápido
