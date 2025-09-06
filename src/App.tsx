@@ -4,6 +4,7 @@ import { About } from './components/about'
 import { Services } from './components/services'
 import { Contact } from './components/contact'
 import { Footer } from './components/footer'
+import { ToTopButton } from './components/to-top'
 
 export function App() {
 
@@ -11,6 +12,7 @@ export function App() {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <ToTopButton />
       <About />
       <Services />
       <Contact />
