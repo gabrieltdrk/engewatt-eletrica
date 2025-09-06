@@ -34,7 +34,7 @@ export function Services() {
         "Relatórios de inspeção",
         "ART (Anotação de Responsabilidade Técnica)"
       ],
-      gradient: "bg-power-gradient"
+      gradient: "bg-energy-gradient"
     },
     {
       icon: Settings,
