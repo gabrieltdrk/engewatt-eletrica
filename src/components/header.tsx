@@ -110,7 +110,7 @@ useEffect(() => {
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="md:hidden"
+                        className="md:hidden cursor-pointer"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         {isMobileMenuOpen ? (
@@ -134,7 +134,7 @@ useEffect(() => {
                                     variant="ghost"
                                     size="icon"
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-foreground hover:text-primary"
+                                    className="text-foreground hover:text-primary cursor-pointer"
                                 >
                                     <X className="w-6 h-6" />
                                 </Button>
@@ -153,7 +153,7 @@ useEffect(() => {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.2 + index * 0.1 }}
                                         onClick={() => scrollToSection(item.id)}
-                                        className="text-3xl font-semibold text-foreground hover:text-primary transition-colors duration-300"
+                                        className="text-3xl font-semibold text-foreground hover:text-primary transition-colors duration-300 cursor-pointer"
                                     >
                                         {item.label}
                                     </motion.button>
@@ -165,7 +165,7 @@ useEffect(() => {
                                 >
                                     <Button
                                         onClick={() => scrollToSection("contact")}
-                                        className="bg-energy-gradient opacity-90 text-white shadow-electric text-xl px-8 py-3"
+                                        className="bg-energy-gradient opacity-90 text-white shadow-electric text-xl px-8 py-3 cursor-pointer"
                                     >
                                         Orçamento
                                     </Button>

@@ -5,8 +5,27 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Zap } from "lucide-react";
+import { useState } from "react";
 
 export function Contact() {
+  const [phone, setPhone] = useState("");
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, ""); // remove tudo que não for número
+    if (value.length > 11) value = value.slice(0, 11); // máximo de 11 dígitos
+
+    // Formata para (XX) XXXXX-XXXX
+    if (value.length > 6) {
+      value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+    } else if (value.length > 2) {
+      value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+    } else if (value.length > 0) {
+      value = `(${value}`;
+    }
+
+    setPhone(value);
+  };
+
   const contactInfo = [
     {
       icon: Phone,
@@ -52,7 +71,7 @@ export function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Entre em <span className="bg-energy-gradient bg-clip-text text-transparent">Contato</span>
+            Entre em <span className="bg-energy-gradient bg-clip-text text-transparent">contato</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Pronto para começar seu projeto? Entre em contato conosco e solicite
@@ -155,6 +174,7 @@ export function Contact() {
                       <Input
                         id="email"
                         type="email"
+                        inputMode="email"
                         placeholder="seu@email.com"
                         required
                         className="border-border/50 focus:border-primary"
@@ -164,12 +184,17 @@ export function Contact() {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Telefone</Label>
+                      <Label htmlFor="phone">Celular</Label>
                       <Input
+                        type="tel"
+                        inputMode="tel"
                         id="phone"
                         placeholder="(48) 99999-9999"
+                        pattern="\(\d{2}\) \d{5}-\d{4}"
                         required
                         className="border-border/50 focus:border-primary"
+                        value={phone}
+                        onChange={handlePhoneChange}
                       />
                     </div>
 
@@ -180,7 +205,7 @@ export function Contact() {
                         className="w-full px-3 py-2 bg-background border border-border/50 rounded-md focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                         required
                       >
-                        <option value="">Selecione o serviço</option>
+                        <option disabled value="">Selecione o serviço</option>
                         <option value="projeto">Projeto Elétrico</option>
                         <option value="laudo">Laudo Técnico</option>
                         <option value="consultoria">Consultoria</option>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
-import { Zap, FileSearch, Settings, Home, Building2, Factory, ArrowRight, CheckCircle } from "lucide-react";
+import { Zap, FileSearch, Settings, Home, Building2, ArrowRight, CheckCircle, Sunset } from "lucide-react";
 
 export function Services() {
   const scrollToContact = () => {
@@ -54,17 +54,17 @@ export function Services() {
     {
       icon: Home,
       title: "Residencial",
-      description: "Soluções elétricas para residências e condomínios"
+      description: "Soluções elétricas para residências e condomínios."
     },
     {
       icon: Building2,
       title: "Comercial",
-      description: "Projetos para estabelecimentos comerciais e empresariais"
+      description: "Projetos para estabelecimentos comerciais e empresariais."
     },
     {
-      icon: Factory,
-      title: "Industrial",
-      description: "Instalações elétricas para indústrias e plantas fabris"
+      icon: Sunset,
+      title: "Painéis Solares",
+      description: "Instalações de painéis solares para todos os tipos."
     }
   ];
 
@@ -79,7 +79,7 @@ export function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Nossos <span className="bg-energy-gradient bg-clip-text text-transparent">Serviços</span>
+            Nossos <span className="bg-energy-gradient bg-clip-text text-transparent">serviços</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Oferecemos uma gama completa de serviços em engenharia elétrica,
@@ -138,7 +138,7 @@ export function Services() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h3 className="text-3xl font-bold mb-4">Segmentos Atendidos</h3>
+          <h3 className="text-3xl font-bold mb-4">Segmentos atendidos</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Atendemos diversos segmentos com soluções personalizadas para cada necessidade
           </p>
