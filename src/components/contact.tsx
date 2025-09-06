@@ -1,0 +1,219 @@
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Label } from "./ui/label";
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Zap } from "lucide-react";
+
+export function Contact() {
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Telefone",
+      content: "(48) 99999-9999",
+      description: "Atendimento de segunda à sexta"
+    },
+    {
+      icon: Mail,
+      title: "E-mail",
+      content: "contato@engewatt.com.br",
+      description: "Resposta em até 24h"
+    },
+    {
+      icon: MapPin,
+      title: "Localização",
+      content: "Florianópolis - SC",
+      description: "Atendimento em toda Grande Florianópolis"
+    },
+    {
+      icon: Clock,
+      title: "Horário",
+      content: "08:00 às 18:00",
+      description: "Segunda à sexta-feira"
+    }
+  ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Aqui você integraria com seu backend ou serviço de e-mail
+    alert("Mensagem enviada! Entraremos em contato em breve.");
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Entre em <span className="bg-energy-gradient bg-clip-text text-transparent">Contato</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Pronto para começar seu projeto? Entre em contato conosco e solicite
+            um orçamento personalizado sem compromisso.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-1"
+          >
+            <Card className="p-6 bg-power-gradient text-white shadow-electric h-fit">
+              <CardHeader className="p-0 mb-6">
+                <div className="flex items-center mb-4">
+                  <Zap className="w-8 h-8 mr-3" />
+                  <CardTitle className="text-2xl">Fale Conosco</CardTitle>
+                </div>
+                <p className="text-white/90">
+                  Estamos prontos para atender suas necessidades em engenharia elétrica.
+                </p>
+              </CardHeader>
+
+              <CardContent className="p-0 space-y-6">
+                {contactInfo.map((info, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex items-start space-x-4"
+                  >
+                    <div className="p-2 bg-white/20 rounded-lg">
+                      <info.icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1">{info.title}</h4>
+                      <p className="text-white/90 font-medium">{info.content}</p>
+                      <p className="text-white/70 text-sm">{info.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* WhatsApp CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-6"
+            >
+              <Button
+                className="w-full bg-green-500 hover:bg-green-600 text-white shadow-lg"
+                size="lg"
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                WhatsApp: Atendimento Rápido
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-2"
+          >
+            <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50">
+              <CardHeader className="p-0 mb-6">
+                <CardTitle className="text-2xl mb-2">Solicite seu Orçamento</CardTitle>
+                <p className="text-muted-foreground">
+                  Preencha o formulário abaixo e nossa equipe entrará em contato
+                </p>
+              </CardHeader>
+
+              <CardContent className="p-0">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Nome Completo</Label>
+                      <Input
+                        id="name"
+                        placeholder="Seu nome completo"
+                        required
+                        className="border-border/50 focus:border-primary"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="email">E-mail</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="seu@email.com"
+                        required
+                        className="border-border/50 focus:border-primary"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Telefone</Label>
+                      <Input
+                        id="phone"
+                        placeholder="(48) 99999-9999"
+                        required
+                        className="border-border/50 focus:border-primary"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="service">Tipo de Serviço</Label>
+                      <select
+                        id="service"
+                        className="w-full px-3 py-2 bg-background border border-border/50 rounded-md focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        required
+                      >
+                        <option value="">Selecione o serviço</option>
+                        <option value="projeto">Projeto Elétrico</option>
+                        <option value="laudo">Laudo Técnico</option>
+                        <option value="consultoria">Consultoria</option>
+                        <option value="outros">Outros</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Mensagem</Label>
+                    <Textarea
+                      id="message"
+                      placeholder="Descreva seu projeto ou necessidade..."
+                      rows={5}
+                      required
+                      className="border-border/50 focus:border-primary resize-none"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full bg-energy-gradient hover:opacity-90 text-white shadow-electric"
+                  >
+                    <Send className="w-5 h-5 mr-2" />
+                    Enviar Mensagem
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}

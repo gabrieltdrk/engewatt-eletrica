@@ -1,0 +1,18 @@
+/* globals.css (ou onde estiver) */
+.bg-energy-gradient {
+  background-image: var(--energy-gradient);
+  background-repeat: no-repeat;
+  background-size: cover; /* ou '100% 100%' */
+  background-position: center;
+}
+
+.text-fill-transparent {
+  -webkit-text-fill-color: transparent; /* necessário em alguns navegadores */
+}
+
+/* Se por algum motivo seu Tailwind não tiver bg-clip-text (raríssimo), adicione:
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+*/

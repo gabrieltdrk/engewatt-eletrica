@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -13,8 +13,33 @@ export function Header() {
             setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        return () => document.removeEventListener("scroll", handleScroll);
     }, []);
+
+useEffect(() => {
+    const headerElement = document.getElementById("header");
+
+    if (headerElement) { // checa se existe
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = "hidden";
+            headerElement.className = "bg-transparent";
+        } else {
+            document.body.style.overflow = "";
+            headerElement.className = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+                isScrolled
+                    ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border"
+                    : "bg-transparent"
+            }`;
+        }
+    }
+
+    return () => {
+        document.body.style.overflow = "";
+    };
+}, [isMobileMenuOpen, isScrolled]);
+
+
+
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -28,7 +53,6 @@ export function Header() {
         { label: "Início", id: "hero" },
         { label: "Sobre", id: "about" },
         { label: "Serviços", id: "services" },
-        { label: "Contato", id: "contact" },
     ];
 
     return (
@@ -36,10 +60,8 @@ export function Header() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border"
-                    : "bg-transparent"
-                }`}
+            id="header"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-soft border-b border-border`}
         >
             <div className="container mx-auto px-4 py-4">
                 <div className="flex items-center justify-between">
@@ -79,7 +101,7 @@ export function Header() {
                         ))}
                         <Button
                             onClick={() => scrollToSection("contact")}
-                            className="bg-energy-gradient hover:opacity-90 text-white shadow-electric"
+                            className="bg-energy-gradient hover:opacity-90 text-white shadow-electric cursor-pointer"
                         >
                             Orçamento
                         </Button>
@@ -143,7 +165,7 @@ export function Header() {
                                 >
                                     <Button
                                         onClick={() => scrollToSection("contact")}
-                                        className="bg-energy-gradient hover:opacity-90 text-white shadow-electric text-xl px-8 py-3"
+                                        className="bg-energy-gradient opacity-90 text-white shadow-electric text-xl px-8 py-3"
                                     >
                                         Orçamento
                                     </Button>

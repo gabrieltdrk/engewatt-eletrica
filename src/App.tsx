@@ -1,7 +1,9 @@
 import { Header } from './components/header'
 import { Hero } from './components/hero'
 import { About } from './components/about'
-import { Footer } from './components/Footer'
+import { Services } from './components/services'
+import { Contact } from './components/contact'
+import { Footer } from './components/footer'
 
 export function App() {
 
@@ -10,8 +12,8 @@ export function App() {
       <Header />
       <Hero />
       <About />
-      {/* <Services /> */}
-      {/* <Contact /> */}
+      <Services />
+      <Contact />
       <Footer />
     </div>
   )
