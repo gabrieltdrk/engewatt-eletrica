@@ -1,5 +1,6 @@
 import { Header } from './components/header'
- import { About } from './components/about'
+import { About } from './components/about'
+import { Footer } from './components/Footer'
 
 export function App() {
 
@@ -10,7 +11,7 @@ export function App() {
       <About />
       {/* <Services /> */}
       {/* <Contact /> */}
-      {/* <Footer /> */} 
+      <Footer /> 
     </div>
   )
 }

@@ -11,11 +11,12 @@ export function About() {
     ];
 
     const achievements = [
-        "Engenheiro Elétrico formado pela UFSC",
-        "Especialização em Instalações Elétricas Industriais",
-        "Registro ativo no CREA-SC",
-        "Certificação em NR-10 (Segurança em Instalações Elétricas)",
-        "Membro da ABINEE (Associação Brasileira da Indústria Elétrica)",
+        "Engenheiros formados pela Unisanta",
+        "Especialização em instalações elétricas e painéis solares",
+        "Registro ativo no CREA-SP",
+        "Certificação em XX-XX ~",
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     ];
 
     return (
@@ -71,13 +72,13 @@ export function About() {
                         </div>
 
                         <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
-                            Com mais de uma década de experiência no mercado de engenharia elétrica,
+                            Com mais de uma década de experiência no mercado,
                             nossa equipe especializada oferece soluções completas e personalizadas
                             para cada tipo de projeto.
                         </p>
 
                         <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
-                            Trabalhamos com foco na eficiência energética, segurança e sustentabilidade,
+                            Trabalhamos com segurança e sustentabilidade,
                             sempre em conformidade com as mais rigorosas normas técnicas.
                         </p>
 
