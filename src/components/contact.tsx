@@ -6,6 +6,7 @@ import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Zap } from "lucide-react";
 import { useState } from "react";
+import company from "../../company-info.json";
 
 export function Contact() {
   const [phone, setPhone] = useState("");
@@ -30,27 +31,28 @@ export function Contact() {
     {
       icon: Phone,
       title: "Telefone",
-      content: "(48) 99999-9999",
-      description: "Atendimento de segunda à sexta"
+      content: company.tel.number,
+      description: company.tel.description
     },
     {
       icon: Mail,
       title: "E-mail",
-      content: "contato@engewatt.com.br",
-      description: "Resposta em até 24h"
+      content: company.email.address,
+      description: company.email.description
     },
     {
       icon: MapPin,
       title: "Localização",
-      content: "Florianópolis - SC",
-      description: "Atendimento em toda Grande Florianópolis"
+      content: company.location.city,
+      description: company.location.description
     },
     {
       icon: Clock,
       title: "Horário",
-      content: "08:00 às 18:00",
-      description: "Segunda à sexta-feira"
+      content: `${company.open.from} às ${company.open.to}`,
+      description: company.open.description
     }
+
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -62,7 +64,6 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,7 +81,6 @@ export function Contact() {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -110,9 +110,9 @@ export function Contact() {
                     className="flex items-start space-x-4"
                   >
                     <div className="p-2 bg-white/20 rounded-lg">
-                      <info.icon className="w-5 h-5" />
+                      <info.icon className="w-8 h-8" />
                     </div>
-                    <div className="flex w-full flex-col gap-3">
+                    <div className="flex w-full flex-col">
                       <h4 className="font-semibold mb-1">{info.title}: {info.content}</h4>
                       <p className="text-white/70 text-sm">{info.description}</p>
                     </div>
@@ -142,7 +142,6 @@ export function Contact() {
             </motion.div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -165,7 +164,7 @@ export function Contact() {
                       <Label htmlFor="name">Nome Completo</Label>
                       <Input
                         id="name"
-                        placeholder="Seu nome completo"
+                        placeholder="Nome completo"
                         required
                         className="border-border/50 focus:border-primary"
                       />
@@ -230,7 +229,7 @@ export function Contact() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-energy-gradient hover:opacity-90 text-white shadow-electric"
+                    className="w-full bg-energy-gradient hover:opacity-90 text-white shadow-electric cursor-pointer"
                   >
                     <Send className="w-5 h-5 mr-2" />
                     Enviar Mensagem

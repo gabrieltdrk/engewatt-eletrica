@@ -1,12 +1,23 @@
 {
     "name": "Engewatt",
     "description": "Estamos prontos para atender suas necessidades em engenharia elétrica.",
-    "tel": "(13) 99638-5150",
-    "location": "Santos-SP",
-    "email": "contato@engewatt.com.br",
+    "tel": {
+        "number": "(13) 99638-5150",
+        "description": "Atendimento de segunda à sexta"
+    },
+    "location": {
+        "city": "Santos-SP",
+        "description": "Atendimento em toda Grande Florianópolis"
+    },
+    "email": {
+        "icon": "Mail",
+        "address": "contato@engewatt.com.br",
+        "description": "Resposta em até 24h"
+    },
     "open": {
         "from": "08:00",
-        "to": "17:00"
+        "to": "17:00",
+        "description": "Segunda à sexta-feira"
     },
     "services": {
         "service1": "",

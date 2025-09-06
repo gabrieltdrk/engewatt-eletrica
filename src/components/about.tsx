@@ -106,7 +106,7 @@ export function About() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="relative"
                     >
-                        <Card className="p-8 bg-power-gradient text-white shadow-electric">
+                        <Card className="p-8 bg-energy-gradient text-white shadow-electric">
                             <CardContent className="p-0">
                                 <div className="flex items-center mb-6">
                                     <Briefcase className="w-8 h-8 mr-4" />

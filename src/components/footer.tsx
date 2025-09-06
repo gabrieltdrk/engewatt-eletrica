@@ -99,15 +99,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span className="text-background/80">{company.tel}</span>
+                <span className="text-background/80">{company.tel.number}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span className="text-background/80">{company.email}</span>
+                <span className="text-background/80">{company.email.address}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span className="text-background/80">{company.location}</span>
+                <span className="text-background/80">{company.location.city}</span>
               </div>
             </div>
           </motion.div>
